@@ -7,20 +7,24 @@
 // B I B L I O T E C A S
 
 // MUI
+import Box from '@mui/material/Box';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+// PROJETO
 import PainelPrincipal from './componentes/PainelPrincipal/index.js'
 import Advertisement from './componentes/Advertisement/index.js'
 import Cabecalho from './componentes/Cabecalho/index.js'
 import Gaveta from './componentes/Gaveta/index.js'
 import Rodape from './componentes/Rodape/index.js'
-import Box from '@mui/material/Box';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // CSS
+import './App.css'
 
 // OUTROS
 import * as React from 'react';
+
+// FONTES
 import '@fontsource/ubuntu';
-import './App.css'
 
 // ICONES
 
@@ -56,13 +60,11 @@ function App() {
       <Gaveta/>
       <Box sx={{
         backgroundColor: 'background.default',
-        minHeight:' 100%',
-        padding: '2em',
-
+        padding: { xs: "1em", md: "2em"},
       }}>
-        <Advertisement/>
+        {/* <Advertisement/> */}
         <PainelPrincipal/>
-        <Advertisement/>
+        {/* <Advertisement/> */}
         <Rodape/>
       </Box>
     </ThemeProvider>

@@ -5,4 +5,12 @@
 .rodape a{
     text-decoration: none;
     color: #FFFFFF;
+    cursor: pointer;
+}
+
+.rodape a:hover{
+    text-decoration:underline;
+    color: #FFFFFF;
+    cursor: pointer;
+
 }

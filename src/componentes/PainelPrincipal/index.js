@@ -176,7 +176,7 @@ export default function PainelPrincipal() {
   }
 
   return (
-    <Box marginTop={'2em'} marginBottom={'2em'}> 
+    <Box> 
       <Paper elevation={4}>
 
         <Box sx={{ width: '100%' }}>
@@ -194,7 +194,7 @@ export default function PainelPrincipal() {
           </Box>
         </Box>
 
-        <Box sx={{padding:5, paddingBottom:9, paddingTop: 3 }}>
+        <Box sx={{padding:5, paddingTop: 3, paddingBottom: 3 }}>
             <TextField
               id="filled-multiline-static"
               multiline
@@ -203,10 +203,9 @@ export default function PainelPrincipal() {
               variant="standard"
               onInput={handleType}
               fullWidth
-              inputProps={{ maxLength: 5000 }}
             />
         
-          <Stack direction="row" className='actionBtn' spacing={1} style={{position: 'relative', top: 10, right:0 ,zIndex:1, float: 'right'}}>
+          <Stack flexDirection={{ xs: "column", md: "row"}} className='actionBtn' spacing={1} style={{position: 'relative', top: 10, right:0 ,zIndex:1, float: 'right'}}>
             
             <Tooltip title="Copy to Clipboard">
               <IconButton aria-label="copy">
@@ -231,7 +230,13 @@ export default function PainelPrincipal() {
           </Stack>
           
           <Box className='counter'>
-            <p>{texto.length} / 5.000</p>
+            <Stack
+              flexDirection={{ xs: "column", md: "row"}}
+              >
+              <p><strong>CHARACTERS:&nbsp;</strong>{texto.length}&nbsp;&nbsp;&nbsp;</p>
+              <p><strong>WORDS:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.match(/[\w\d\’\'-]+/gi).length}&nbsp;&nbsp;&nbsp;</p>
+              <p><strong>LINES:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.split(/\r\n|\r|\n/).length}&nbsp;&nbsp;&nbsp;</p>
+            </Stack>
           </Box>
         </Box>
         
