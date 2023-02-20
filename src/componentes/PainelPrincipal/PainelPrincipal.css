@@ -1,0 +1,17 @@
+.toggleBtn{
+    font-weight: bold;
+    text-transform: none;
+}
+
+.counter{
+    float: left;
+    font-size: 1em;
+}
+
+.actionBtn{
+    position: relative;
+    top: 100;
+    right:0;
+    z-index: 1;
+    float: right;
+}
