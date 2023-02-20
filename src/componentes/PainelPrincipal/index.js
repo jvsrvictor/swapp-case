@@ -1,22 +1,36 @@
-// Bibliotecas
-import * as React from 'react';
+// SWAPPCASE.COM
+// AUTOR: JVSRVICTOR
+// DATA: 18/02/2023
+//
+// COMPONENTE - PAINEL PRINCIPAL
+
+// B I B L I O T E C A S
+
+// MUI
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import './PainelPrincipal.css'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import Tooltip from '@mui/material/Tooltip';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import Typography from '@mui/material/Typography';
 
-// Icones
+// CSS
+import './PainelPrincipal.css'
+
+// OUTROS
+import * as React from 'react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+// ICONES
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import DownloadIcon from '@mui/icons-material/Download';
 import ClearIcon from '@mui/icons-material/Clear';
 import IconButton from '@mui/material/IconButton';
+
+// F U N Ç Õ E S
 
 // Função para notificação de Clipboard
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -162,27 +176,11 @@ export default function PainelPrincipal() {
   }
 
   return (
-    <Box
-      sx={{
-        //backgroundColor: '#2a2e32',
-        padding: 7,
-        '&:hover': {
-          //backgroundColor: '#000000',
-        },
-      }}
-    > 
-      <Box sx={{
-        //backgroundColor: '#FFFFFF',
-        borderRadius:2,
-        boxShadow:'0 1px 4px 0 rgb(0 0 0 / 37%)',
-        '&:hover': {
-          //backgroundColor: '#000000',
-        },
-      }}>
-
+    <Box marginTop={'2em'} marginBottom={'2em'}> 
+      <Paper elevation={4}>
 
         <Box sx={{ width: '100%' }}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable" scrollButtons >
               <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Original" value="original" />
               <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Sentence Case" value="sentence" />
@@ -237,11 +235,11 @@ export default function PainelPrincipal() {
           </Box>
         </Box>
         
-      </Box>
+      </Paper>
 
       <Snackbar open={copiado} autoHideDuration={6000} onClose={handleCopiadoClose}>
         <Alert onClose={handleCopiadoClose} severity="success" sx={{ width: '100%' }}>
-          Text Copied!
+          <strong>Text Copied!</strong>
         </Alert>
       </Snackbar>
 
