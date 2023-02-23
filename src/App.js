@@ -12,7 +12,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // PROJETO
 import PainelPrincipal from './componentes/PainelPrincipal/index.js'
-import Advertisement from './componentes/Advertisement/index.js'
 import Cabecalho from './componentes/Cabecalho/index.js'
 import Gaveta from './componentes/Gaveta/index.js'
 import Rodape from './componentes/Rodape/index.js'
@@ -61,9 +60,7 @@ function App() {
         backgroundColor: 'background.default',
         padding: { xs: "1em", md: "2em"},
       }}>
-        {/* <Advertisement/> */}
         <PainelPrincipal/>
-        {/* <Advertisement/> */}
         <Rodape/>
       </Box>
     </ThemeProvider>
