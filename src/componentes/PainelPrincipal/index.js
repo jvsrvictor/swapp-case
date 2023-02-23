@@ -217,7 +217,7 @@ export default function PainelPrincipal() {
               flexDirection={{ xs: "column", md: "row"}}
               >
               <p><strong>CHARACTERS:&nbsp;</strong>{texto.length}&nbsp;&nbsp;&nbsp;</p>
-              <p><strong>WORDS:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.match(/[\w\d\’\'-]+/gi).length}&nbsp;&nbsp;&nbsp;</p>
+              <p><strong>WORDS:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.match(/[\w\d’'-]+/gi).length}&nbsp;&nbsp;&nbsp;</p>
               <p><strong>LINES:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.split(/\r\n|\r|\n/).length}&nbsp;&nbsp;&nbsp;</p>
             </Stack>
           </Box>
