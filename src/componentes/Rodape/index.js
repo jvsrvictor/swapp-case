@@ -12,13 +12,12 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import Link from '@mui/material/Link';
 
 // PROJETO
 import PoliticaPrivacidade from '../PoliticaPrivacidade/index.js'
 import TermosUso from '../TermosUso/index.js'
 
-// CSS
-import './Rodape.css'
 
 import * as React from 'react';
 
@@ -76,9 +75,9 @@ export default function Rodape(){
 
         </Dialog>
 
-        <Typography className='rodape' variant="h7" component="div" align='center' sx={{ flexGrow: 1, marginTop:{ xs: 3 , md: 5} }}>
+        <Typography className='rodape' color={'#FFFFFF'} variant="h7" component="div" align='center' sx={{ flexGrow: 1, marginTop:{ xs: 3 , md: 5} }}>
             Copyright ©2023 - 2023 | SWAPPCASE Ltd<br/>
-            <a onClick={handleClickOpen('privacidade')}>Privacy Policy</a> | <a onClick={handleClickOpen('termos')}>Terms and Conditions</a> 
+            <Link underline="hover" href="#" onClick={handleClickOpen('privacidade')}>Privacy Policy</Link> | <Link underline="hover" href="#" onClick={handleClickOpen('termos')}>Terms and Conditions</Link> 
         </Typography>
     </>
         
