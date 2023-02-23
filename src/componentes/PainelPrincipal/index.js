@@ -44,19 +44,19 @@ export default function PainelPrincipal() {
   const [value, setValue] = React.useState('original');
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    if(newValue=='original'){
+    if(newValue==='original'){
       setTexto(textoOriginal)
-    }else if(newValue=='sentence'){
+    }else if(newValue==='sentence'){
       setTexto(sentenceCase(texto.toLocaleLowerCase()))
-    }else if(newValue=='upper'){
+    }else if(newValue==='upper'){
       setTexto(texto.toLocaleUpperCase())
-    }else if(newValue=='lower'){
+    }else if(newValue==='lower'){
       setTexto(texto.toLocaleLowerCase())
-    }else if(newValue=='capitalize'){
+    }else if(newValue==='capitalize'){
       setTexto(capitalizeCase(texto.toLocaleLowerCase()))
-    }else if(newValue=='invert'){
+    }else if(newValue==='invert'){
       setTexto(invertCase(texto))
-    }else if(newValue=='alternate'){
+    }else if(newValue==='alternate'){
       setTexto(alternateCase(texto))
     }
   };
