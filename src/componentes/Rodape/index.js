@@ -52,14 +52,8 @@ export default function Rodape(){
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
         >
-
             <DialogContent>
-                <DialogContentText
-                    id="scroll-dialog-description"
-                    tabIndex={-1}
-                >
-                    <TermosUso/>
-                </DialogContentText>
+                <TermosUso/>
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>Ok, I agree</Button>
@@ -73,20 +67,14 @@ export default function Rodape(){
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
         >
-
             <DialogContent>
-                <DialogContentText
-                    id="scroll-dialog-description"
-                    tabIndex={-1}
-                >
-                    <PoliticaPrivacidade/>
-                </DialogContentText>
+                <PoliticaPrivacidade/>
             </DialogContent>
 
             <DialogActions>
                 <Button onClick={handleClose}>Ok, i agree</Button>
             </DialogActions>
-            
+
         </Dialog>
 
         <Typography className='rodape' variant="h7" component="div" align='center' sx={{ flexGrow: 1, marginTop:{ xs: 3 , md: 5} }}>

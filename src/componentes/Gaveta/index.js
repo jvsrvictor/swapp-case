@@ -74,12 +74,7 @@ export default function Gaveta (){
                 onClose={handleClose}
             >
                 <DialogContent>
-                    <DialogContentText
-                        id="scroll-dialog-description"
-                        tabIndex={-1}
-                    >
-                        <TermosUso/>
-                    </DialogContentText>
+                    <TermosUso/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Ok, I agree</Button>
@@ -91,12 +86,7 @@ export default function Gaveta (){
                 onClose={handleClose}
             >
                 <DialogContent>
-                    <DialogContentText
-                        id="scroll-dialog-description"
-                        tabIndex={-1}
-                    >
-                        <PoliticaPrivacidade/>
-                    </DialogContentText>
+                    <PoliticaPrivacidade/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Ok, i agree</Button>
@@ -109,12 +99,7 @@ export default function Gaveta (){
                 onClose={handleClose}
             >
                 <DialogContent>
-                    <DialogContentText
-                        id="scroll-dialog-description"
-                        tabIndex={-1}
-                    >
-                        <SobreAutor/>
-                    </DialogContentText>
+                    <SobreAutor/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Nice</Button>
