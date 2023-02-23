@@ -64,7 +64,14 @@ export default function Gaveta (){
     };
 
     return(
-        <div className='Gaveta'>
+        <Box sx={
+            {
+                float:'left',
+                position:'absolute',
+                top:'6px',
+                left:'15px',
+            }
+        }>
             <Dialog
                 open={openTermos}
                 onClose={handleClose}
@@ -142,49 +149,49 @@ export default function Gaveta (){
                         </Typography>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Wide Text Generator" />
                             </ListItemButton>
                         </ListItem>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Strikethrough Text Generator" />
                             </ListItemButton>
                         </ListItem>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Glitch Text Generator" />
                             </ListItemButton>
                         </ListItem>
                         
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Reverse Text Generator" />
                             </ListItemButton>
                         </ListItem>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Mirrored Text Generator" />
                             </ListItemButton>
                         </ListItem>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Upside Down Text Generator" />
                             </ListItemButton>
                         </ListItem>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Online Notepad/To Do List" />
                             </ListItemButton>
                         </ListItem>
 
                         <ListItem disablePadding>
-                            <ListItemButton disabled='true'>
+                            <ListItemButton disabled>
                                 <ListItemText primary="Binary Text Converter" />
                             </ListItemButton>
                         </ListItem>
@@ -223,6 +230,6 @@ export default function Gaveta (){
 
                 </Box>
             </Drawer>
-        </div>
+        </Box>
     );
 }

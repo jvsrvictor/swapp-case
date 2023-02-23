@@ -47,19 +47,17 @@ export default function PainelPrincipal() {
     if(newValue=='original'){
       setTexto(textoOriginal)
     }else if(newValue=='sentence'){
-      setTexto(sentenceCase(texto))
+      setTexto(sentenceCase(texto.toLocaleLowerCase()))
     }else if(newValue=='upper'){
       setTexto(texto.toLocaleUpperCase())
     }else if(newValue=='lower'){
       setTexto(texto.toLocaleLowerCase())
     }else if(newValue=='capitalize'){
-      setTexto(capitalizeCase(texto))
+      setTexto(capitalizeCase(texto.toLocaleLowerCase()))
     }else if(newValue=='invert'){
       setTexto(invertCase(texto))
     }else if(newValue=='alternate'){
       setTexto(alternateCase(texto))
-    }else if(newValue=='title'){
-      setTexto(titleCase(texto))
     }
   };
 
@@ -131,20 +129,6 @@ export default function PainelPrincipal() {
     return textoFinal;
   }
 
-  // Função para converter o case para título
-  const titleCase = (textoOriginal) => {
-    var textoFinal = textoOriginal.split(" ");
-    console.log(textoFinal)
-    
-    for (let i = 0; i < textoFinal.length; i++) {
-      textoFinal[i] = textoFinal[i][0].toUpperCase() + textoFinal[i].substr(1);
-    }
-
-    console.log(textoFinal)
-    
-    textoFinal = textoFinal.join(" ");
-    return textoFinal;
-  }
 
   // Função para converter o case para frase
   const sentenceCase = (textoOriginal) => {
@@ -189,7 +173,6 @@ export default function PainelPrincipal() {
               <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Capitalized Case" value="capitalize" />
               <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="iNVERT cASE" value="invert" />
               <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="aLtErNaTiNg cAsE" value="alternate" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Title of Case" value="title" />
             </Tabs>
           </Box>
         </Box>

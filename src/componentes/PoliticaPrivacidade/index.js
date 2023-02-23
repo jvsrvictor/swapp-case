@@ -181,7 +181,7 @@ export default function PoliticaPrivacidade(){
             <h2>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
-            <li>By email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85f6f2e4f5f5e6e4f6e0abe6eae8c5e2e8e4ece9abe6eae8">[email&#160;protected]</a></li>
+            <li>By email: <a href="/cdn-cgi/l/email-protection" data-cfemail="85f6f2e4f5f5e6e4f6e0abe6eae8c5e2e8e4ece9abe6eae8">[email&#160;protected]</a></li>
             </ul><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
         </>
     );

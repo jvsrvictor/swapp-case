@@ -53,7 +53,6 @@ const theme = createTheme({
 // Função Principal
 function App() {
 
-
   return (
     <ThemeProvider theme={theme}>
       <Cabecalho/>

@@ -15,10 +15,8 @@ import Typography from '@mui/material/Typography';
 // OUTROS
 import * as React from 'react';
 
-// CSS
-import './Cabecalho.css'
-
 // ICONES
+import logotipo from './swappcase.png'
 
 // F U N Ç Õ E S
 
@@ -29,8 +27,8 @@ export default function Cabecalho (){
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h5" component="div" align='center' sx={{ flexGrow: 1 }}>
-                    swapp<strong>CASE</strong>
+                    <Typography style={{display:'flex', justifyContent:'center'}} variant="h5" component="div" align='center' sx={{ flexGrow: 1 }}>
+                    <img height={37} style={{}} src={logotipo} alt='Logotipo'/>&nbsp;SWAPP<strong>CASE</strong>
                     </Typography>
                 </Toolbar>
             </AppBar>
