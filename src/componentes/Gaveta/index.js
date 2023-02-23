@@ -31,9 +31,6 @@ import SobreAutor from '../SobreAutor/index.js'
 // OUTROS
 import * as React from 'react';
 
-// CSS
-import './Gaveta.css'
-
 // ICONES
 import MenuIcon from '@mui/icons-material/Menu';
 
