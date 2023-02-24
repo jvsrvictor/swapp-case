@@ -12,6 +12,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // PROJETO
 import PainelPrincipal from './componentes/PainelPrincipal/index.js'
+import PainelBinario from './componentes/PainelBinario/index.js'
 import Cabecalho from './componentes/Cabecalho/index.js'
 import Gaveta from './componentes/Gaveta/index.js'
 import Rodape from './componentes/Rodape/index.js'
@@ -29,6 +30,7 @@ import '@fontsource/ubuntu';
 
 // F U N Ç Õ E S
 
+// Definição de Tema
 const theme = createTheme({
   palette: {
     mode: 'dark',
@@ -39,7 +41,7 @@ const theme = createTheme({
       main: '#b0bec5',
     },
     background: {
-      default: '#424242',
+      default: '#595959',
       paper: '#212121',
     },
   },
@@ -50,17 +52,22 @@ const theme = createTheme({
 });
 
 // Função Principal
-function App() {
+function App(props) {
 
   return (
     <ThemeProvider theme={theme}>
       <Cabecalho/>
-      <Gaveta/>
+      <Gaveta tool={props.tool}/>
       <Box sx={{
         backgroundColor: 'background.default',
         padding: { xs: "1em", md: "2em"},
       }}>
-        <PainelPrincipal/>
+        {
+          {
+            0: <PainelPrincipal />,
+            1: <PainelBinario />
+          }[props.tool]
+        }
         <Rodape/>
       </Box>
     </ThemeProvider>

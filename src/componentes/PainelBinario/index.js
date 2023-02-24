@@ -2,7 +2,7 @@
 // AUTOR: JVSRVICTOR
 // DATA: 18/02/2023
 //
-// COMPONENTE - PAINEL PRINCIPAL
+// COMPONENTE - PAINEL CONVERSOR BINÁRIO
 
 // B I B L I O T E C A S
 
@@ -18,7 +18,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
 // CSS
-import './PainelPrincipal.css'
+import './PainelBinario.css'
 
 // OUTROS
 import * as React from 'react';
@@ -29,6 +29,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import DownloadIcon from '@mui/icons-material/Download';
 import ClearIcon from '@mui/icons-material/Clear';
 import IconButton from '@mui/material/IconButton';
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
 
 // F U N Ç Õ E S
 
@@ -38,33 +39,18 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 // Função Principal
-export default function PainelPrincipal() {
+export default function PainelBinario() {
 
   // Sistema de UseState para as tabs
-  const [value, setValue] = React.useState('original');
+  const [value, setValue] = React.useState('text');
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    if(newValue==='original'){
-      setTexto(textoOriginal)
-    }else if(newValue==='sentence'){
-      setTexto(sentenceCase(texto.toLocaleLowerCase()))
-    }else if(newValue==='upper'){
-      setTexto(texto.toLocaleUpperCase())
-    }else if(newValue==='lower'){
-      setTexto(texto.toLocaleLowerCase())
-    }else if(newValue==='capitalize'){
-      setTexto(capitalizeCase(texto.toLocaleLowerCase()))
-    }else if(newValue==='invert'){
-      setTexto(invertCase(texto))
-    }else if(newValue==='alternate'){
-      setTexto(alternateCase(texto))
+    if(newValue==='binary'){
+      setTexto(converteBinario(texto))
+    }else{
+      setTexto(converteTexto(texto))
     }
-  };
-
-  // Salvando o texto original em um UseState
-  const [textoOriginal, setTextoOriginal] = React.useState('');
-  const salvaTextoOriginal = (textoOriginal) =>{
-    setTextoOriginal(textoOriginal)
+    
   };
 
   // UseState para digitação do texto
@@ -72,7 +58,6 @@ export default function PainelPrincipal() {
   const handleType = (event) =>{
     var textoTemp = event.target.value;
     setTexto(textoTemp)
-    salvaTextoOriginal(textoTemp)
     setCopiado(false)
   };
 
@@ -86,61 +71,6 @@ export default function PainelPrincipal() {
     setCopiado(false);
   };
 
-  // Função para inverter o case da frase
-  const invertCase = (textoOriginal) => {
-    var textoFinal = "";
-    for(var i = 0; i<textoOriginal.length; i++){
-        if(textoOriginal[i] === textoOriginal[i].toLowerCase()){
-          textoFinal += textoOriginal[i].toUpperCase();
-        }else {
-          textoFinal += textoOriginal[i].toLowerCase();
-        }
-    }
-    return textoFinal;
-  }
-
-  // Função para inverter o case da frase
-  const alternateCase = (textoOriginal) => {
-    var textoFinal = "";
-    var flag = true;
-    for(var i = 0; i<textoOriginal.length; i++){
-      if(flag){
-        textoFinal += textoOriginal[i].toLowerCase()
-        flag = false;
-      }else{
-        textoFinal += textoOriginal[i].toUpperCase()
-        flag = true;
-      }
-      
-    }
-    return textoFinal;
-  }
-
-  // Função para dar Uppercase na primeira letra de cada palavra
-  const capitalizeCase = (textoOriginal) => {
-    var textoFinal = textoOriginal.split(" ");
-    
-    for (let i = 0; i < textoFinal.length; i++) {
-      textoFinal[i] = textoFinal[i][0].toUpperCase() + textoFinal[i].substr(1);
-    }
-   
-    textoFinal = textoFinal.join(" ");
-    return textoFinal;
-  }
-
-
-  // Função para converter o case para frase
-  const sentenceCase = (textoOriginal) => {
-    var textoFinal = textoOriginal.split(". ");
-    textoFinal = textoFinal.filter(e => e !== '')
-    
-    for (let i = 0; i < textoFinal.length; i++) {
-      textoFinal[i] = textoFinal[i][0].toUpperCase() + textoFinal[i].substr(1);
-    }
-    
-    textoFinal = textoFinal.join(". ");
-    return textoFinal;
-  }
 
   // Função para apagar o conteúdo
   const apagarTexto = (event) =>{
@@ -158,20 +88,32 @@ export default function PainelPrincipal() {
     link.click();
   }
 
+  // Função para converter texto em Binário
+  const converteBinario = (textoOriginal) => {
+    var textoBinario = '';
+    textoBinario = textoOriginal.split('').map(char => {
+       return char.charCodeAt(0).toString(2);
+    }).join(' ');
+    return textoBinario;
+  }
+
+  // Função para converter binário em Texto
+  const converteTexto = (textoOriginal) => {
+    textoOriginal = textoOriginal.split(' ');
+    return textoOriginal.map(elem => String.fromCharCode(parseInt(elem, 2))).join("");
+  }
+  
+
   return (
     <Box> 
       <Paper elevation={4}>
 
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable" scrollButtons >
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Original" value="original" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Sentence Case" value="sentence" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="UPPERCASE" value="upper" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="lowercase" value="lower" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="Capitalized Case" value="capitalize" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="iNVERT cASE" value="invert" />
-              <Tab style={{textTransform:'none', fontWeight:'bold'}} className='toggleBtn' label="aLtErNaTiNg cAsE" value="alternate" />
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered >
+              <Tab style={{fontWeight:'bold'}} className='toggleBtn' label="TEXT" value="text" />
+              <Tab disabled icon={<SyncAltIcon/>} className='toggleBtn'></Tab>
+              <Tab style={{fontWeight:'bold'}} className='toggleBtn' label="BINARY" value="binary" />
             </Tabs>
           </Box>
         </Box>
@@ -218,6 +160,7 @@ export default function PainelPrincipal() {
               <p><strong>CHARACTERS:&nbsp;</strong>{texto.length}&nbsp;&nbsp;&nbsp;</p>
               <p><strong>WORDS:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.match(/[\w\d’'-]+/gi).length}&nbsp;&nbsp;&nbsp;</p>
               <p><strong>LINES:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.split(/\r\n|\r|\n/).length}&nbsp;&nbsp;&nbsp;</p>
+
             </Stack>
           </Box>
         </Box>

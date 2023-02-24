@@ -13,6 +13,8 @@ import './SobreAutor.css'
 
 // MUI
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
+
 
 // F U N Ç Õ E S
 
@@ -31,10 +33,10 @@ export default function SobreAutor(){
                     backgroundSize: '100% 100%',
                     height:100,
                     width: 100,
-                    borderRadius:400,                   
+                    borderRadius:400,
                 }}></Box>
                 
-                <h2 style={{marginLeft: 20}}><a href='https://github.com/jvsrvictor'>jvsrvictor</a></h2>
+                <h1 style={{marginLeft: 20,}}><Link underline="hover" color="inherit" href='https://github.com/jvsrvictor'>jvsrvictor</Link></h1>
             </Box>
             <p>Hello! My name is Victor and I am the author of this website. I'm a junior professional in Front End programming, more specifically in React. I've always enjoyed creating and developing systems. Therefore, I decided to carry out my degree in Computer Engineering at the <a href='https://ifce.edu.br/'>Federal Institute of Education, Science and Technology of Ceará (IFCE)</a>.</p>
             <p>During the bachelor's degree I had the opportunity to develop my passion for programming while exercising my experience in the most diverse types of projects, combining knowledge with good practices.</p>

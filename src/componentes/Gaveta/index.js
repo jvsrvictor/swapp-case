@@ -21,11 +21,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
+import { Link } from 'react-router-dom';
 
 // PROJETO
 import PoliticaPrivacidade from '../PoliticaPrivacidade/index.js'
 import TermosUso from '../TermosUso/index.js'
 import SobreAutor from '../SobreAutor/index.js'
+import SobreSite from '../SobreSite/index.js'
 
 // OUTROS
 import * as React from 'react';
@@ -39,6 +41,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 export default function Gaveta (){
     const [gaveta, setGaveta] = React.useState(false)
 
+    const [pagina, setPagina] = React.useState(0);
+
+    const handleClickPagina = (pag) => () => {
+        setPagina(pag)
+    };
+
+    const [openSobreSwappcase, setOpenSobreSwappcase] = React.useState(false);
     const [openPrivacidade, setOpenPrivacidade] = React.useState(false);
     const [openTermos, setOpenTermos] = React.useState(false);
     const [openAutor, setOpenAutor] = React.useState(false);
@@ -48,12 +57,15 @@ export default function Gaveta (){
             setOpenPrivacidade(true);
         }else if(policyType==='termos'){
             setOpenTermos(true);
-        }else{
+        }else if(policyType==='autor'){
             setOpenAutor(true);
+        }else{
+            setOpenSobreSwappcase(true)
         }
     };
     
     const handleClose = () => {
+        setOpenSobreSwappcase(false);
         setOpenPrivacidade(false);
         setOpenTermos(false);
         setOpenAutor(false);
@@ -68,6 +80,18 @@ export default function Gaveta (){
                 left:'15px',
             }
         }>
+            <Dialog
+                open={openSobreSwappcase}
+                onClose={handleClose}
+            >
+                <DialogContent>
+                    <SobreSite/>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose}>Nice!</Button>
+                </DialogActions>
+            </Dialog>
+
             <Dialog
                 open={openTermos}
                 onClose={handleClose}
@@ -101,7 +125,7 @@ export default function Gaveta (){
                     <SobreAutor/>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Nice</Button>
+                    <Button onClick={handleClose}>Nice!</Button>
                 </DialogActions>
                 
             </Dialog>
@@ -117,17 +141,32 @@ export default function Gaveta (){
                 {/* CONTEUDO DA GAVETA LATERAL */}
                 <Box width={'300px'} >
                     
-                    <Typography padding={3} variant="h5" component="div" align='center' sx={{ flexGrow: 1 }}>
+                    <Typography padding={3} onClick={handleClickOpen('sobre')} variant="h5" component="div" align='center' sx={{ flexGrow: 1, cursor: 'pointer' }}>
                     swapp<strong>case</strong>.com
                     </Typography>
 
-
-                    <Divider />
+                    <Divider/>
 
                     <List>
                         <Typography padding={2} variant="h7" component="div" sx={{ flexGrow: 1 }}>
-                            <strong>OTHER TOOLS</strong>
+                            <strong>SWAPPCASE TOOLS</strong>
                         </Typography>
+
+                        <Link to='/'>
+                            <ListItem disablePadding>
+                                <ListItemButton onClick={handleClickPagina(0)} selected={pagina===0}>
+                                    <ListItemText primary="Case Converter" />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
+
+                        <Link to='/binaryconverter'>
+                            <ListItem disablePadding>
+                                <ListItemButton onClick={handleClickPagina(1)} selected={pagina===1}>
+                                    <ListItemText primary="Binary Text Converter" />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
 
                         <ListItem disablePadding>
                             <ListItemButton disabled>
@@ -170,16 +209,10 @@ export default function Gaveta (){
                                 <ListItemText primary="Online Notepad/To Do List" />
                             </ListItemButton>
                         </ListItem>
-
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Binary Text Converter" />
-                            </ListItemButton>
-                        </ListItem>
-
+            
                     </List>
 
-                    <Divider />
+                    <Divider/>
 
                     <List>
                         <Typography padding={2} variant="h7" component="div" sx={{ flexGrow: 1 }}>
@@ -197,8 +230,6 @@ export default function Gaveta (){
                                 <ListItemText primary="Privacy Policy" />
                             </ListItemButton>
                         </ListItem>
-
-                        
 
                         <ListItem disablePadding>
                             <ListItemButton onClick={handleClickOpen('autor')}>

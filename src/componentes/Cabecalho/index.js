@@ -28,7 +28,7 @@ export default function Cabecalho (){
             <AppBar position="static">
                 <Toolbar>
                     <Typography style={{display:'flex', justifyContent:'center'}} variant="h5" component="div" align='center' sx={{ flexGrow: 1 }}>
-                    <img height={40} style={{}} src={logotipo} alt='Logotipo'/>&nbsp;swapp<strong>case</strong>
+                    <img height={40} style={{}} src={logotipo} alt='Logotipo Swappcase'/>&nbsp;swapp<strong>case</strong>
                     </Typography>
                 </Toolbar>
             </AppBar>
