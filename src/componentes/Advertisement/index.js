@@ -15,7 +15,7 @@ export default function Advertisement() {
             marginTop: '30px'
         }}> 
             <Helmet>
-                <script type="text/javascript" src='https://wwww.swappcase.com/ad.js'>
+                <script type="text/javascript" src='https://www.swappcase.com/ad.js'>
                 </script>
             </Helmet>
         </Box>
