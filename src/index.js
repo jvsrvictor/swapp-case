@@ -19,6 +19,10 @@ const router = createBrowserRouter([
     path: "/binaryconverter",
     element: <App tool={1}/>,
   },
+  {
+    path: "/texteffects",
+    element: <App tool={2}/>,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

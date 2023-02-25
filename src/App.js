@@ -13,6 +13,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 // PROJETO
 import PainelPrincipal from './componentes/PainelPrincipal/index.js'
 import PainelBinario from './componentes/PainelBinario/index.js'
+import PainelEfeitos from './componentes/PainelEfeitos/index.js'
 import Cabecalho from './componentes/Cabecalho/index.js'
 import Gaveta from './componentes/Gaveta/index.js'
 import Rodape from './componentes/Rodape/index.js'
@@ -65,7 +66,8 @@ function App(props) {
         {
           {
             0: <PainelPrincipal />,
-            1: <PainelBinario />
+            1: <PainelBinario />,
+            2: <PainelEfeitos />
           }[props.tool]
         }
         <Rodape/>

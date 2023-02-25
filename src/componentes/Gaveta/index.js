@@ -168,47 +168,22 @@ export default function Gaveta (){
                             </ListItem>
                         </Link>
 
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Wide Text Generator" />
-                            </ListItemButton>
-                        </ListItem>
+                        <Link to='/texteffects'>
+                            <ListItem disablePadding>
+                                <ListItemButton onClick={handleClickPagina(2)} selected={pagina===2}>
+                                    <ListItemText primary="Text Effects Generator" />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
 
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Strikethrough Text Generator" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Glitch Text Generator" />
-                            </ListItemButton>
-                        </ListItem>
-                        
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Reverse Text Generator" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Mirrored Text Generator" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding>
-                            <ListItemButton disabled>
-                                <ListItemText primary="Upside Down Text Generator" />
-                            </ListItemButton>
-                        </ListItem>
+                       
 
                         <ListItem disablePadding>
                             <ListItemButton disabled>
                                 <ListItemText primary="Online Notepad/To Do List" />
                             </ListItemButton>
                         </ListItem>
+                        
             
                     </List>
 
