@@ -1,7 +1,6 @@
 import * as React from 'react';
 import './Advertisement.css'
 import Box from '@mui/material/Box';
-import {Helmet} from "react-helmet";
 
 // Função Principal
 export default function Advertisement() {
@@ -14,10 +13,7 @@ export default function Advertisement() {
             justifyContent: 'center',
             marginTop: '30px'
         }}> 
-            <Helmet>
-                <script type="text/javascript" src='https://www.swappcase.com/ad.js'>
-                </script>
-            </Helmet>
+                <script type="text/javascript" src='https://www.swappcase.com/ad.js'></script>
         </Box>
     );
 
