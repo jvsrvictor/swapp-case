@@ -13,7 +13,7 @@ export default function Advertisement() {
             justifyContent: 'center',
             marginTop: '30px'
         }}> 
-                <script type="text/javascript" src='https://www.swappcase.com/ad.js'></script>
+            <script src='https://www.swappcase.com/ad.js' type="text/javascript" ></script>
         </Box>
     );
 
