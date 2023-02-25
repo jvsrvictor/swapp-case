@@ -26,6 +26,7 @@ import * as React from 'react';
 
 // FONTES
 import '@fontsource/ubuntu';
+import Advertisement from './componentes/Advertisement/index.js';
 
 // ICONES
 
@@ -36,13 +37,13 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#ef6c00',
+      main: '#ff8a00',
     },
     secondary: {
       main: '#b0bec5',
     },
     background: {
-      default: '#595959',
+      default: '#3f3f3f',
       paper: '#212121',
     },
   },
@@ -62,7 +63,9 @@ function App(props) {
       <Box sx={{
         backgroundColor: 'background.default',
         padding: { xs: "1em", md: "2em"},
+        paddingTop: { xs: "0", md: "0"},
       }}>
+        <Advertisement/>
         {
           {
             0: <PainelPrincipal />,
@@ -70,6 +73,7 @@ function App(props) {
             2: <PainelEfeitos />
           }[props.tool]
         }
+        <Advertisement/>
         <Rodape/>
       </Box>
     </ThemeProvider>
