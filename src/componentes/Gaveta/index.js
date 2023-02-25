@@ -149,7 +149,7 @@ export default function Gaveta (){
 
                     <List>
                         <Typography padding={2} variant="h7" component="div" sx={{ flexGrow: 1 }}>
-                            <strong>SWAPPCASE TOOLS</strong>
+                            <strong>OUR TOOLS</strong>
                         </Typography>
 
                         <Link to='/'>
