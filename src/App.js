@@ -18,15 +18,18 @@ import Cabecalho from './componentes/Cabecalho/index.js'
 import Gaveta from './componentes/Gaveta/index.js'
 import Rodape from './componentes/Rodape/index.js'
 
+import AdNormal from './componentes/Advertisement/AdNormal.js';
+import AdMobile from './componentes/Advertisement/AdMobile.js';
+
 // CSS
 import './App.css'
 
 // OUTROS
 import * as React from 'react';
+import { useMediaQuery } from 'react-responsive'
 
 // FONTES
 import '@fontsource/ubuntu';
-import Advertisement from './componentes/Advertisement/index.js';
 
 // ICONES
 
@@ -55,6 +58,7 @@ const theme = createTheme({
 
 // Função Principal
 function App(props) {
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
   return (
     <ThemeProvider theme={theme}>
@@ -65,7 +69,15 @@ function App(props) {
         padding: { xs: "1em", md: "2em"},
         paddingTop: { xs: "0", md: "0"},
       }}>
-        <Advertisement/>
+        <Box className='advertisement' sx={{
+            marginBottom: '30px',
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '30px',
+        }}>
+          {isPortrait ? <AdMobile/> : <AdNormal/>}
+          
+        </Box>
         {
           {
             0: <PainelPrincipal />,
@@ -73,7 +85,7 @@ function App(props) {
             2: <PainelEfeitos />
           }[props.tool]
         }
-        <Advertisement/>
+        {/* <Advertisement/> */}
         <Rodape/>
       </Box>
     </ThemeProvider>
