@@ -186,21 +186,21 @@ export default function Gaveta (){
                             </ListItem>
                         </Link>
 
-                        <Link to='/texteffects'>
+                        {/* <Link to='/texteffects'>
                             <ListItem disablePadding>
                                 <ListItemButton onClick={handleClickPagina(2)} selected={pagina===2}>
                                     <ListItemText primary="Text Effects Generator" />
                                 </ListItemButton>
                             </ListItem>
-                        </Link>
+                        </Link> */}
 
                        
 
-                        <ListItem disablePadding>
+                        {/* <ListItem disablePadding>
                             <ListItemButton disabled>
                                 <ListItemText primary="Online Notepad/To Do List" />
                             </ListItemButton>
-                        </ListItem>
+                        </ListItem> */}
                         
             
                     </List>

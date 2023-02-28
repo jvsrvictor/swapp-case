@@ -57,8 +57,7 @@ export default function PainelBinario() {
   const [texto, setTexto] = React.useState('');
   const handleType = (event) =>{
     var textoTemp = event.target.value;
-    value==='binary' ? setTexto(textoTemp.replace(/\b[01]+\b/g, "")) : setTexto(textoTemp)
-
+    value==='binary' ? setTexto(textoTemp.replace(/[^01 ]/g, "")) : setTexto(textoTemp)
     setCopiado(false)
   };
 
@@ -159,8 +158,8 @@ export default function PainelBinario() {
               flexDirection={{ xs: "column", md: "row"}}
               >
               <p><strong>CHARACTERS:&nbsp;</strong>{texto.length}&nbsp;&nbsp;&nbsp;</p>
-              <p><strong>WORDS:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.match(/[\w\d’'-]+/gi).length}&nbsp;&nbsp;&nbsp;</p>
-              <p><strong>LINES:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.split(/\r\n|\r|\n/).length}&nbsp;&nbsp;&nbsp;</p>
+              {/* <p><strong>WORDS:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.match(/[\w\d’'-]+/gi).length}&nbsp;&nbsp;&nbsp;</p>
+              <p><strong>LINES:&nbsp;</strong>{(!texto || /^\s*$/.test(texto)) ? 0 : texto.split(/\r\n|\r|\n/).length}&nbsp;&nbsp;&nbsp;</p> */}
 
             </Stack>
           </Box>
