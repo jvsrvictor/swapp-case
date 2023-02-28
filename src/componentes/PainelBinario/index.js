@@ -46,9 +46,9 @@ export default function PainelBinario() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     if(newValue==='binary'){
-      setTexto(converteBinario(texto))
+      texto==='' ? setTexto('') : setTexto(converteBinario(texto))
     }else{
-      setTexto(converteTexto(texto))
+      texto==='' ? setTexto('') : setTexto(converteTexto(texto))
     }
     
   };
@@ -57,7 +57,8 @@ export default function PainelBinario() {
   const [texto, setTexto] = React.useState('');
   const handleType = (event) =>{
     var textoTemp = event.target.value;
-    setTexto(textoTemp)
+    value==='binary' ? setTexto(textoTemp.replace(/\b[01]+\b/g, "")) : setTexto(textoTemp)
+
     setCopiado(false)
   };
 

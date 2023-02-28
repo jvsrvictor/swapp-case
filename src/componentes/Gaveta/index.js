@@ -39,13 +39,31 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 // Função Principal
 export default function Gaveta (){
+    var pagInicial
+    switch(window.location.pathname){
+        default:
+            pagInicial = 0;
+            break;
+        case "/":
+            pagInicial = 0;
+            break;
+        case "/binaryconverter":
+            pagInicial = 1;
+            break;
+        case "/texteffects":
+            pagInicial = 2;
+            break;
+    }
+
     const [gaveta, setGaveta] = React.useState(false)
 
-    const [pagina, setPagina] = React.useState(0);
+    const [pagina, setPagina] = React.useState(pagInicial);
 
     const handleClickPagina = (pag) => () => {
         setPagina(pag)
     };
+
+
 
     const [openSobreSwappcase, setOpenSobreSwappcase] = React.useState(false);
     const [openPrivacidade, setOpenPrivacidade] = React.useState(false);

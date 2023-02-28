@@ -58,6 +58,7 @@ const theme = createTheme({
 
 // Função Principal
 function App(props) {
+  // Verificar se estar no Mobile
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
   return (
@@ -69,15 +70,16 @@ function App(props) {
         padding: { xs: "1em", md: "2em"},
         paddingTop: { xs: "0", md: "0"},
       }}>
-        <Box className='advertisement' sx={{
-            marginBottom: '30px',
+
+        <Box sx={{
+            marginBottom: { xs: "1em", md: "2em"},
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '30px',
+            marginTop: { xs: "1em", md: "2em"},
         }}>
           {isPortrait ? <AdMobile/> : <AdNormal/>}
-          
         </Box>
+
         {
           {
             0: <PainelPrincipal />,
@@ -85,8 +87,9 @@ function App(props) {
             2: <PainelEfeitos />
           }[props.tool]
         }
-        {/* <Advertisement/> */}
+
         <Rodape/>
+
       </Box>
     </ThemeProvider>
   );

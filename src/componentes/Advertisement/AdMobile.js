@@ -27,6 +27,6 @@ export default function AdMobile() {
     });
   
     return(
-        <div class="mobileShow"><div ref={bannerMobile}/></div>
+        <div><div ref={bannerMobile}/></div>
   );
 }

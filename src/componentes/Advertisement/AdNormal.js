@@ -27,6 +27,6 @@ export default function AdNormal() {
     });
 
     return(
-        <div class="mobileHide"><div ref={banner}/></div>
+        <div><div ref={banner}/></div>
   );
 }
