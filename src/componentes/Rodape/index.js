@@ -76,7 +76,7 @@ export default function Rodape(){
         </Dialog>
 
         <Typography className='rodape' color={'#FFFFFF'} variant="h7" component="div" align='center' sx={{ flexGrow: 1, marginTop:{ xs: 3 , md: 5} }}>
-            Copyright ©2023 - 2023 | SWAPPCASE Ltd<br/>
+            Copyright ©2023 - 2024 | SWAPPCASE Ltd<br/>
             <Link underline="hover" onClick={handleClickOpen('privacidade')}>Privacy Policy</Link> | <Link underline="hover" onClick={handleClickOpen('termos')}>Terms and Conditions</Link> 
         </Typography>
     </>
